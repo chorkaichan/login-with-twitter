@@ -127,14 +127,16 @@ class LoginWithTwitter {
         oauth_token: userToken,
         oauth_token_secret: userTokenSecret,
         screen_name: userName,
-        user_id: userId
+        user_id: userId,
+        email,
       } = querystring.parse(data.toString())
 
       cb(null, {
         userName,
         userId,
         userToken,
-        userTokenSecret
+        userTokenSecret,
+        email,
       })
     })
   }
